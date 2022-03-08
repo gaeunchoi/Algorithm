@@ -1,21 +1,30 @@
 import sys
 from collections import Counter
+
 N = int(sys.stdin.readline())
-
-def most_common_num(nums):
-    if len(nums) == 0:
-        return None
-
-    return Counter(nums).most_common(n=1)[0][0]
 
 nums = []
 for _ in range(N):
     nums.append(int(sys.stdin.readline()))
 
+nums.sort()
+
+# 산술평균
 print(round(sum(nums)/N))
 
-nums.sort()
-print(nums[int(N/2)])
+# 중앙값
+print(nums[N//2])
 
-# 미완성
-print(most_common_num(nums))
+# 최빈값
+numss = Counter(nums).most_common()
+
+if len(numss) > 1:
+    if numss[0][1] == numss[1][1]:
+        print(numss[1][0])
+    else:
+        print(numss[0][0])
+else:
+    print(numss[0][0])
+
+# 범위
+print(nums[-1] - nums[0])
