@@ -6,7 +6,6 @@
 
 * [BOJ](https://www.acmicpc.net) 
 * [프로그래머스](https://programmers.co.kr)
-* [정올](http://jungol.co.kr)
 
 ---
 
