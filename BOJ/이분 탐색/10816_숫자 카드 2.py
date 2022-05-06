@@ -1,21 +1,18 @@
-def binary(target):
-    left = 0
-    right = n-1
-
-    while left <= right:
-        mid = (left + right) // 2
-        if card[mid] == target:
-            return target
-        if target < card[mid]:
-            right = mid-1
-        elif target > card[mid]:
-            left = mid+1
-
-
 n = int(input())
 card = list(map(int, input().split()))
-card.sort()
+
+cardcnt = dict()
+for i in card:
+    if i in cardcnt:
+        cardcnt[i] += 1
+    else:
+        cardcnt[i] = 1
 
 m = int(input())
 num = list(map(int, input().split()))
 
+for i in num:
+    if i in cardcnt:
+        print(cardcnt[i], end = ' ')
+    else:
+        print(0, end = ' ')
