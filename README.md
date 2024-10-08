@@ -9,4 +9,4 @@
 
 ---
 
-python 또는 swift를 사용합니다.
+use python
