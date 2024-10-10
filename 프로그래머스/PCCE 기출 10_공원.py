@@ -1,0 +1,41 @@
+def getSize(mats, park,  i, j):
+    ans = -1
+    for size in mats:
+        sizeable = size
+        for x in range(i, i+size):
+            if sizeable == -1:
+                break
+
+            for y in range(j, j+size):
+                if x >= len(park) or y >= len(park[0]):
+                    sizeable = -1
+                    break
+
+                if park[x][y] != '-1':
+                    sizeable = -1
+                    break
+
+        ans = max(ans, sizeable)
+
+    return ans
+
+def solution(mats, park):
+    answer = -1
+    matsable = [[] for i in range(len(park))]
+
+    for i, i_values in enumerate(park):
+        for j in [j for j, value in enumerate(i_values) if value == "-1"]:
+            matsable[i].append(j)
+
+    print(matsable)
+
+    for i in range(len(matsable)):
+        for j in matsable[i]:
+            answer = max(answer, getSize(mats, park, i, j))
+
+    return answer
+
+print(solution([5,3,2], 	[["A", "A", "-1", "B", "B", "B", "B", "-1"], ["A", "A", "-1", "B", "B", "B", "B", "-1"], ["-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1"], ["D", "D", "-1", "-1", "-1", "-1", "E", "-1"], ["D", "D", "-1", "-1", "-1", "-1", "-1", "F"], ["D", "D", "-1", "-1", "-1", "-1", "E", "-1"]]))
+print(solution([3], [["-1", "-1", "A"], ["-1", "-1", "-1"], ["-1", "-1", "-1"]]))
+print(solution( [1, 5], [["A", "-1"], ["A", "-1"]]))
+print(solution([1, 2], [["A", "-1"], ["A", "-1"]]))

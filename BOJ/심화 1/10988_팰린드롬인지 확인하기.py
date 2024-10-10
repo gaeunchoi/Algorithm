@@ -16,7 +16,7 @@ else:
 
 print(palindrome)
 
-
+# -----------------------------------------------------------------
 
 if ''.join(reversed(input_word)) == input_word:
     print(1)
