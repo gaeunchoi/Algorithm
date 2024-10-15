@@ -6,7 +6,7 @@ def solution(points, routes):
 
     robot_move_routes = [[] for _ in range(robot_cnt)]
 
-    for i in range(len(routes)):
+    for i in range(robot_cnt):
         for j in range(len(routes[i])-1):
             start_x, start_y = points[routes[i][j]-1]
             end_x, end_y = points[routes[i][j+1]-1]
