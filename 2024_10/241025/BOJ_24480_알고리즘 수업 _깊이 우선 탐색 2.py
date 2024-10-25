@@ -10,11 +10,7 @@ for _ in range(M):
     graph[v].append(u)
 
 for i in range(1, N+1):
-    graph[i].sort()
-
-visited = [False] * len(graph)
-result = [0] * (N+1)
-t = 1
+    graph[i].sort(reverse = True)
 
 def dfs(graph, r, visited):
     global t
@@ -26,6 +22,10 @@ def dfs(graph, r, visited):
     for node in graph[r]:
         if not visited[node]:
             dfs(graph, node, visited)
+
+result = [0] * (N+1)
+visited = [False] * (N+1)
+t = 1
 
 dfs(graph, R, visited)
 
