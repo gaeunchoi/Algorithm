@@ -13,25 +13,27 @@ for _ in range(m):
 
 def dfs(points, depth):
     if depth == m:
-        result = points
+        result.append(points)
         return
 
     if points[-1] == targets[depth]:
-        dfs(points[-1], depth + 1)
+        dfs(points, depth + 1)
         return
 
+    x, y = points[-1][0], points[-1][1]
     for dx, dy in directions:
-        mx, my = points[-1][0] + dx, points[-1][1] + dy
+        mx, my = x + dx, y + dy
 
         if (mx < 0 or n <= mx or my < 0 or n <= my) or maps[mx][my] == 1:
-            break
+            continue
 
         if [mx, my] not in points:
-            points.append([mx, my])
-            dfs(points, depth)
+            # print(points + [[mx, my]])
+            dfs(points + [[mx, my]], depth)
 
 
 result = []
 dfs([targets[0]], 0)
 
+# print(*result)
 print(len(result))
