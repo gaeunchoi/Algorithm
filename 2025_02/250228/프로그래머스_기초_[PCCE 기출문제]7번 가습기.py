@@ -21,7 +21,7 @@ def func2(humidity):
 def func3(humidity, val_set):
     if humidity < val_set:
         return 1
-    return 3
+    return 0
 
 
 def solution(mode_type, humidity, val_set):
