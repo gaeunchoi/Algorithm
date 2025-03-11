@@ -1,0 +1,1 @@
+const solution = (arr, n) => arr.splice(0, n)
