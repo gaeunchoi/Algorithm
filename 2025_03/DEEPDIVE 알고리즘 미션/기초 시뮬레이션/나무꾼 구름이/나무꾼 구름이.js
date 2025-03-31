@@ -24,7 +24,7 @@ const readline = require('readline');
 			H[pos] -= +H[pos] + i;
 		}
 		
-		if(D[i] === 'L') pos = (pos-1) % N;
+		if(D[i] === 'L') pos = (pos-1+N) % N;
 		else if(D[i] === 'R') pos = (pos+1) % N;
 	}
 	
