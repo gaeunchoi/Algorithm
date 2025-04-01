@@ -2,9 +2,4 @@
 
 ---
 
-🐹 2021.12.02 ~ 
-
-* [BOJ](https://www.acmicpc.net) 
-* [프로그래머스](https://programmers.co.kr)
-* [Softeer](https://softeer.ai/practice)
----
+[❌Problem-Solving 레포로 이동❌](https://github.com/gaeunchoi/Problem-Solving)
